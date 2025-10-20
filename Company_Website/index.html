@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PSMCreations Solutions - Crafting Digital Excellence</title>
+    <title>PSM Creations Solutions - Crafting Digital Excellence</title>
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
@@ -672,9 +672,9 @@
             <div class="logo">PSMCreations</div>
             <ul class="nav-menu">
                 <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#about">About us</a></li>
                 <li><a href="#deliverables">Deliverables</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact">Contact us</a></li>
             </ul>
         </div>
     </nav>
@@ -743,14 +743,14 @@
                     solutions that drive growth and success in the digital age.
                 </p>
                 <ul class="values-list">
-                    <li><strong>🚀 Innovation First</strong> - We stay ahead with latest technologies</li>
-                    <li><strong>🎯 Client Success</strong> - Your success is our priority</li>
-                    <li><strong>💎 Quality Craftsmanship</strong> - Excellence in every detail</li>
-                    <li><strong>🤝 Transparent Communication</strong> - Always keeping you in the loop</li>
+                    <li><strong>Innovation First</strong> - We stay ahead with latest technologies</li>
+                    <li><strong>Client Success</strong> - Your success is our priority</li>
+                    <li><strong>Quality Craftsmanship</strong> - Excellence in every detail</li>
+                    <li><strong>Transparent Communication</strong> - Always keeping you in the loop</li>
                 </ul>
             </div>
             <div class="about-image">
-                🚀
+                <img src="images/about us image.png" alt="About Us Image" />
             </div>
         </div>
     </section>
@@ -784,7 +784,7 @@
             <div class="feature-card">
                 <div class="feature-icon">🔧</div>
                 <h3>Maintenance & Support</h3>
-                <p>24/7 technical support and regular updates to keep your site running smoothly and securely.</p>
+                <p>Technical support and regular updates to keep your site running smoothly and securely.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">📊</div>
@@ -793,43 +793,91 @@
             </div>
         </div>
     </section>
+        <!-- CONTACT SECTION -->
+<section id="contact" class="section">
+    <h2 class="section-title">Get In Touch</h2>
+    <p class="section-subtitle">Let's discuss your next project</p>
+    
+    <div class="contact-container">
+        <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+            
+            <!-- 🔐 Replace with your actual Access Key from web3forms.com -->
+            <input type="hidden" name="access_key" value="6fe8718c-da6d-45d8-84ab-579d7f7ee433">
 
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="section">
-        <h2 class="section-title">Get In Touch</h2>
-        <p class="section-subtitle">Let's discuss your next project</p>
-        
-        <div class="contact-container">
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" placeholder="John Doe" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Tell us about your project..." required></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
+            <!-- Optional: Custom subject -->
+            <input type="hidden" name="subject" value="New Contact Form Submission">
+            
+            <!-- Optional: From name -->
+            <input type="hidden" name="from_name" value="PSM Creations Website">
+
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell us about your project..." required></textarea>
+            </div>
+
+            <!-- Honeypot spam protection -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </div>
+        <script>
+                const form = document.getElementById('contactForm');
+                const button = form.querySelector('.submit-btn');
+
+                form.addEventListener('submit', async function (e) {
+                    e.preventDefault(); // Prevent page reload
+                    button.textContent = 'Sending...';
+                    button.disabled = true;
+
+                    const formData = new FormData(form);
+
+                    try {
+                    const response = await fetch(form.action, {
+                        method: form.method,
+                        body: formData,
+                        headers: { Accept: 'application/json' },
+                    });
+
+                    if (response.ok) {
+                        // Success message
+                        alert('✅ Thank you! Your message has been sent successfully.');
+                        form.reset();
+                    } else {
+                        // Error message
+                        alert('❌ Oops! Something went wrong. Please try again later.');
+                    }
+                    } catch (error) {
+                    alert('⚠️ Network error. Please check your internet connection.');
+                    } finally {
+                    button.textContent = 'Send Message';
+                    button.disabled = false;
+                    }
+                });
+        </script>
+
+
             
             <div class="contact-info">
-                <p><strong>📧 Email:</strong> hello@PSMCreations.com</p>
-                <p><strong>📞 Phone:</strong> +1 (555) 123-4567</p>
+                <p><strong>📧 Email:</strong> pmscreations@zohomail.in</p>
+                <p><strong>📞 Phone:</strong> +91-7387602529</p>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="footer">
-        <p>&copy; 2024 PSMCreations Solutions. All rights reserved.</p>
-        <p>Built with passion using HTML, CSS & JavaScript ❤️</p>
+        <p>&copy; 2025 PSMCreations Solutions. All rights reserved.</p>
     </footer>
 
     <!-- JAVASCRIPT -->
